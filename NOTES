@@ -1,0 +1,20 @@
+## SSH KEYS #################################################################
+
+#https://www.digitalocean.com/community/tutorials/how-to-set-up-ssh-keys--2
+#To generate ssh key pairs in a home folder
+#skipp passprase
+$> ssh-keygen -t rsa
+#Now we can copy the pub key to anyserver we want to connect.
+$> ssh-copy-id demo@198.51.100.0
+
+#############################################################################
+
+
+##### REVERSE SSH ###########################################################
+# https://www.howtoforge.com/reverse-ssh-tunneling
+# https://unix.stackexchange.com/questions/46235/how-does-reverse-ssh-tunneling-work
+
+Run the script in cron job or in a loop
+Remember to change the port number for each remote site
+
+#############################################################################
