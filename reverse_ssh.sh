@@ -12,3 +12,11 @@ ip=`cat bipin_laptop | perl -ne 'if(/([0-9\.]+)/){print $1;}'`
 
 #here we use another server as remote
 ssh -o "ExitOnForwardFailure yes" -o "StrictHostKeyChecking no" -N -R 33033:10.0.16.6:22 ssh_user@$ip
+
+
+#Asimple way to run this is
+#while true; do
+#    bash reverse_ssh.sh #bash this shell script 
+#    echo "Exit from script; retry after one hour"
+#    sleep 60m  #sleeps 60 minutes
+#done
