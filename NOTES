@@ -18,3 +18,31 @@ Run the script in cron job or in a loop
 Remember to change the port number for each remote site
 
 #############################################################################
+
+
+#### SCP with port ##########################################################
+$> scp -P port 
+#############################################################################
+
+
+#### Running a SOCKS PROXY using ssh ########################################
+
+https://www.digitalocean.com/community/tutorials/how-to-route-web-traffic-securely-without-a-vpn-using-a-socks-tunnel
+
+$> ssh -D 8123 -f -C -q -N sammy@example.com
+
+Explanation of arguments
+
+-D: Tells SSH that we want a SOCKS tunnel on the specified port number (you can choose a number between 1025-65536)
+-f: Forks the process to the background
+-C: Compresses the data before sending it
+-q: Uses quiet mode
+-N: Tells SSH that no command will be sent once the tunnel is up
+Be sure to replace sammy@example.com with your own sudo user and server IP address or domain name.
+
+Once you enter the command, you'll immediately be brought to the command prompt again with no sign of success or failure; that's normal.
+
+Verify that the tunnel is up and running with this command:
+
+ps aux | grep ssh
+#############################################################################
